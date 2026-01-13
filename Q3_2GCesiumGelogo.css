@@ -1,0 +1,32 @@
+body {
+    legend {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 25px;
+    }
+
+    form {
+        max-width: 500px;
+        background-color:rgb(240, 240, 240);
+        padding: 25px;
+        border-radius: 5px;
+        margin: auto;
+    }
+
+    label {
+        font-size: 15px;
+        font-family: Arial, Helvetica, sans-serif;
+        display:block;
+        margin-bottom: 10px;
+    }
+
+    input:focus, select:focus, textarea:focus {
+        outline: none;
+        border-color:rgb(132, 198, 255);
+        background-color: rgb(222, 222, 255);
+    }
+
+    .invalid {
+            border: 2px solid rgb(255, 128, 128);
+            background-color: #ffeeee;
+    }
+}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Application Form</title>
+        <link rel="stylesheet" href="Q3_2GCesiumGelogo.css">
+        <script>
+            function confirmSubmit() {
+                return confirm("Are you sure you want to submit?")
+            }
+            function confirmReset() {
+                return confirm("Are you sure you want to clear your results?")
+            }
+            function checkEmpty(element) {
+            if (element.value.trim() === "") {
+                element.classList.add("invalid");
+            } else {
+                element.classList.remove("invalid");
+            }
+        }
+        </script>
+    </head>
+<body>
+    <header></header>
+    <form method="post" action="submit" onsubmit="return confirmSubmit()" onreset="return confirmReset()">
+        <fieldset>
+            <legend>Credentials</legend><br/>
+            <label>
+                Student ID
+                <input type="number" id="student-ID" name="student-ID" required onblur="checkEmpty(this)">
+            </label>
+            <label>
+                Full Name
+                <input type="text" id="fname" name="fname" required onblur="checkEmpty(this)">
+            </label>
+            <label>
+                Birthday
+                <input type="date" id="bday" name="bday" required onblur="checkEmpty(this)">
+            </label>
+            <label>
+                Email Address
+                <input type="email" id="email-add" name="email-add" required onblur="checkEmpty(this)">
+            </label>
+            <label>
+                Mobile Phone 
+                <input type="text" id="mob" name="mob" required onblur="checkEmpty(this)">
+            </label>
+            <label>
+                Grade Level
+                <select name="grade" id="grade">
+                    <option value="seven">Grade 7</option>
+                    <option value="eight">Grade 8</option>
+                    <option value="nine">Grade 9</option>
+                    <option value="ten">Grade 10</option>
+                    <option value="eleven">Grade 11</option>
+                    <option value="twelve">Grade 12</option>
+                </select>
+            </label>
+            <label>
+                Intern/Extern
+                <input type="radio" id="intern-extern" value="intern"> Intern
+                <input type="radio" id="intern-extern" value="intern"> Extern
+            </label>
+            <label>
+                Preferred Club
+                <select name="club" id="club">
+                    <option value="astronomy">AstroSoc</option>
+                    <option value="physics">PYHS</option>
+                    <option value="chemistry">Atom</option>
+                    <option value="art">Likha</option>
+                    <option value="choir">Himig Agham</option>
+                </select>
+            </label>
+            <label>
+                Why do you want to join?
+                <textarea name="reason" id="reason" required onblur="checkEmpty(this)">
+                </textarea>
+            </label>
+        </fieldset><br/>
+        <fieldset>
+            <legend>Confirm Credentials</legend>
+            <input type="submit" id="submit" name="submit">
+            <input type="reset" id="clear" name="clear">
+        </fieldset>
+    </form>
+</body>
+</html>
