@@ -5,25 +5,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Application Form</title>
         <link rel="stylesheet" href="Q3_2GCesiumGelogo.css">
-        <script>
-            function confirmSubmit() {
-                return confirm("Are you sure you want to submit?")
-            }
-            function confirmReset() {
-                return confirm("Are you sure you want to clear your results?")
-            }
-            function checkEmpty(element) {
-            if (element.value.trim() === "") {
-                element.classList.add("invalid");
-            } else {
-                element.classList.remove("invalid");
-            }
-        }
-        </script>
     </head>
 <body>
     <header>Application Form</header>
-    <form method="post" action="submit" onsubmit="return confirmSubmit()" onreset="return confirmReset()">
+    <form id="form" method="get" action="registered.html" onsubmit="return submit" onreset="return reset">
         <fieldset>
             <legend>Credentials</legend><br/>
             <label>
@@ -84,5 +69,6 @@
             <input type="reset" id="clear" name="clear">
         </fieldset>
     </form>
+    <script src="script.js"></script>
 </body>
 </html>
